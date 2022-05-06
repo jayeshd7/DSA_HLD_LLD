@@ -1,0 +1,29 @@
+1.How does your system ensure that 2 URLs never map to the same shortened URL?
+(MD5 Approach)
+
+    Encode the long URL using the MD5 approach and take only the first 7 chars to generate TinyURL.
+    The first 7 characters could be the same for different long URLs so check the DB to verify that TinyURL is not used already it may acheive with below points
+        The tiny URL should be unique so firstly check the existence of this tiny URL in the database (doing get(tiny) on DB). If it’s already present there for some other long URL then generate a new short URL.
+        If the short URL isn’t present in DB then put longURL and TinyURL in DB (put(TinyURL, longURL)).
+
+ Advantages: This approach saves some space in the database but how? If two users want to generate a tiny URL for the same long URL then the first technique will generate two random numbers and it requires two rows in the database but in the second technique, both the longer URL will have the same MD5 so it will have the same first 43 bits which means we will get some deduping and we will end up with saving some space since we only need to store one row instead of two rows in the database.
+
+
+2. How will you ensure the system is very low latency? 
+Use of a CDN (content delivery network) is a major step towards reducing latency. A CDN caches static content to vastly reduce the RTT (reound trip time)
+
+3. What will happen if the machine storing the URL mapping dies? (Power outage / Hard Disk gone bad)
+
+we can use some service which we genrate the key offline as well some thing like Key Generation Service (KGS) to solve single point failure  we can have a standby replica of KGS. Whenever the primary server dies, the standby server can take over to generate and provide keys.
+
+4. How do you make sure your system is consistent? This is to say, if I have shortened a URL, given the shortened URL, my system should always return the original URL no matter when I call your system. 
+
+Our service supports custom aliases. Users can pick any ‘key’ they like, but providing a custom alias is not mandatory. However, it is reasonable (and often desirable) to impose a size limit on a custom alias to ensure we have a consistent URL database. Let’s assume users can specify a maximum of 16 characters per customer key (as reflected in the above database schema).
+
+Whenever there is a cache miss, our servers would be hitting a backend database. Whenever this happens, we can update the cache and pass the new entry to all the cache replicas. Each replica can update its cache by adding the new entry. If a replica already has that entry, it can simply ignore it.
+
+i attached screen shot as well
+
+5. How do you make sure that your service never goes down? (No outage). You have to assume that your machines will die. How do you make sure your service is unaffected by those incidents (unless all of your machines die at once - Lets assume that never happens). 
+
+The system should be highly available. This is required because, if our service is down, all the URL redirections will start failing. so we can make replica of LB , DB and server as a standby and service hosted cluster.
