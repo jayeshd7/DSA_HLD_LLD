@@ -5,4 +5,4 @@
   # DBMS
   # OS
   # LLD
-  # GLD
+  # HLD
