@@ -3,7 +3,7 @@ host = 'localhost'
 port = 9000
 
 s = socket.socket()
-s.bind((host,port))
+s.bind((host, port))
 
 
 s.listen(1)

@@ -10,7 +10,7 @@ s.connect((host, port))
 
 str = input("Enter data")
 
-while str!='exit':
+while str != 'exit':
     s.send(str.encode())
     data = s.recv(1024)
     data = data.decode()
