@@ -82,6 +82,46 @@ public class StreamConcepts {
                     return a + b;
                 });
         System.out.println(reducedParallel);
+
+
+        List<String> names = Arrays.asList("Angela", "Aaron", "Bob", "Claire", "David");
+
+        List<String> namesWithA = names.stream()
+                .filter(name -> name.startsWith("A"))
+                .collect(Collectors.toList());
+
+        System.out.println(namesWithA);
+
+
+        Map<String, Integer> someMap = new HashMap<>();
+        someMap.put("jayesh",786);
+        someMap.put("pooja",123);
+        Set<Map.Entry<String, Integer>> entries = someMap.entrySet();
+        Set<String> keys = someMap.keySet();
+        Collection<Integer> values = someMap.values();
+        Stream<Map.Entry<String, Integer>> entryStream = entries.stream();
+        Stream<Integer> valueStream = values.stream();
+        List<String> ans = keys.stream().filter(a -> a.startsWith("j")).collect(Collectors.toList());
+
+        System.out.println(ans);
+
+        Map<String, String> books = new HashMap<>();
+        books.put(
+                "978-0201633610", "Design patterns : elements of reusable object-oriented software");
+        books.put(
+                "978-1617291999", "Java 8 in Action: Lambdas, Streams, and functional-style programming");
+        books.put("978-0134685991", "Effective Java");
+
+        Optional<String> optionalIsbn = books.entrySet().stream()
+                .filter(e -> "Effective Java".equals(e.getValue()))
+                .map(Map.Entry::getKey)
+                .findFirst();
+        System.out.println(optionalIsbn.get());
+
+        List<String> titles = books.entrySet().stream()
+                .filter(e -> e.getKey().startsWith("978-0"))
+                .map(Map.Entry::getValue)
+                .collect(Collectors.toList());
     }
     private static long counter;
     private static void wasCalled() {
