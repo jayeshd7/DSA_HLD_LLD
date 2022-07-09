@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 public class ReverseSentense {
     public static void main(String[] args) {
-        String str = "this is jayesh";
+        String str = "Enter your name and address";
        // reverseWords(str);
         reverseWordByWord(str);
     }
@@ -37,14 +37,21 @@ public class ReverseSentense {
 
             String reverseWord = "";
 
-            for (int j = word.length() - 1; j >= 0; j--) {
-                reverseWord = reverseWord + word.charAt(j);
+
+                if (word.length() % 2 == 1) {
+                    for (int j = word.length() - 1; j >= 0; j--) {
+                        reverseWord = reverseWord + word.charAt(j);
+
+                    }
+                    reverseString += reverseWord + " ";
+                } else {
+                    reverseString += reverseWord + word + " ";
+                }
             }
-
-            reverseString = reverseString + reverseWord + " ";
-
-        }
         System.out.println(reverseString);
         return reverseString;
+        }
+
+
     }
-}
+
