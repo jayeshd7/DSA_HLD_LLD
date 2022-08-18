@@ -12,5 +12,6 @@ public class Client {
         Button button = componentFactory.createButton();
         Menu menu = componentFactory.createMenu();
         Dropdown dropdown = componentFactory.createDropdown();
+
     }
 }
