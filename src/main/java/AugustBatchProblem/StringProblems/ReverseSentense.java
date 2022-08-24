@@ -5,17 +5,17 @@ import java.util.regex.Pattern;
 public class ReverseSentense {
     public static void main(String[] args) {
         String str = "Enter your name and address";
-       // reverseWords(str);
+        reverseWords(str);
         reverseWordByWord(str);
     }
 
     static String reverseWords(String str) {
 
         // Specifying the pattern to be searched
-        Pattern pattern = Pattern.compile("\\s");
+        //Pattern pattern = Pattern.compile("\\s");
 
 
-        String[] temp = pattern.split(str);
+        String[] temp = str.split(" ");
         String result = "";
 
 
@@ -26,6 +26,8 @@ public class ReverseSentense {
         System.out.println(result);
         return result;
     }
+
+
 
     static String reverseWordByWord(String str) {
         String[] words = str.split(" ");
@@ -38,15 +40,13 @@ public class ReverseSentense {
             String reverseWord = "";
 
 
-                if (word.length() % 2 == 1) {
+
                     for (int j = word.length() - 1; j >= 0; j--) {
                         reverseWord = reverseWord + word.charAt(j);
 
                     }
                     reverseString += reverseWord + " ";
-                } else {
-                    reverseString += reverseWord + word + " ";
-                }
+
             }
         System.out.println(reverseString);
         return reverseString;
