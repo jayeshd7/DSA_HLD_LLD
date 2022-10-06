@@ -1,4 +1,4 @@
-package AugustBatchProblem.swiggy;
+package AugustBatchProblem.swiggyPast;
 
 public class AccountMaster {
     int accountNo;
