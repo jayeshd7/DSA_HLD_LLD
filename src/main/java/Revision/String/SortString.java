@@ -6,7 +6,7 @@ public class SortString {
     static int MAX_CHAR = 26;
     public static void main(String[] args) {
         String s = "jayesh";
-        //sortStringSolve1(s);
+        sortStringSolve1(s);
         sortStringSolve2(s);
     }
 
