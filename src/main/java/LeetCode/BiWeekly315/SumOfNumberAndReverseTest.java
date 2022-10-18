@@ -16,5 +16,6 @@ class SumOfNumberAndReverseTest {
         Assert.assertEquals(21,SumOfNumberAndReverse.reverse(12));
 
     }
+
 }
 

@@ -6,7 +6,7 @@ public class LargestPositiveInteger {
     public static void main(String[] args) {
         int [] input = {-1,2,3,-3,4,-4,-5};
         int n = input.length;
-        System.out.println(largestPositiveInteger(input, n));
+        System.out.println(largestPositiveInteger2(input, n));
     }
 
     private static int largestPositiveInteger(int[] input, int n) {
