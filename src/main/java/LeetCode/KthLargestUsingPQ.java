@@ -1,5 +1,6 @@
 package LeetCode;
 
+import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class KthLargestUsingPQ {
@@ -12,16 +13,18 @@ public class KthLargestUsingPQ {
     private static int kthLargestElement(int[] arr, int k) {
 
         PriorityQueue<Integer> minheap = new PriorityQueue<>();
+        PriorityQueue<Integer> maxheap = new PriorityQueue<>(Collections.reverseOrder());
         for(int i = 0; i<k;i++){
             minheap.add(arr[i]);
         }
 
-        for(int i = k; i< arr.length;i++){
-            if(minheap.peek() <arr[i]){
+        for (int i = k; i < arr.length; i++) {
+            if(arr[i]>minheap.peek()){
                 minheap.poll();
                 minheap.add(arr[i]);
             }
         }
+
         return minheap.peek();
     }
 }

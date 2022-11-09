@@ -3,6 +3,7 @@ package Sorting;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 public class ArithmeticProgression {
     public static void main(String[] args) {
@@ -15,7 +16,7 @@ public class ArithmeticProgression {
 
     }
 
-    public static int solve(ArrayList<Integer> A) {
+    public static int solve(List<Integer> A) {
 
         Collections.sort(A);
 

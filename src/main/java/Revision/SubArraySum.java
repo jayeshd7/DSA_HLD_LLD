@@ -1,11 +1,13 @@
 package Revision;
 
+import static java.lang.System.*;
+
 public class SubArraySum {
 
     public static void main(String[] args) {
         int [] arr = {15,5,5,20,10,5,5,20,10,10};
         int size = arr.length;
-        System.out.println(subArraySumSolve(arr, size, 20));
+        out.println(subArraySumSolve(arr, size, 20));
     }
 
     private static int subArraySumSolve(int[] arr, int size, int value) {
@@ -16,7 +18,7 @@ public class SubArraySum {
 
         while(second<size && first <size){
             if(sum == value){
-                System.out.println(first+ "and" + second );
+                out.println(first+ "and" + second );
             }
             if(sum <value){
                 second += 1;

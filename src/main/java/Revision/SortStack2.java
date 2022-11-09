@@ -19,15 +19,15 @@ public class SortStack2 {
 
     private static void sortedStack2(Stack<Integer> s1) {
         int temp;
-        Stack<Integer> s2 = new Stack<>();
-        while(s1.isEmpty() == false){
+        var s2 = new Stack<Integer>();
+        while(!s1.isEmpty()){
          temp = s1.pop();
-         while(s2.isEmpty() == false && s2.peek() < temp){
+         while(!s2.isEmpty() && s2.peek() < temp){
              s1.push(s2.pop());
          }
          s2.push(temp);
         }
-        while (s2.isEmpty() == false){
+        while (!s2.isEmpty()){
             s1.push(s2.pop());
         }
 
