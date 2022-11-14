@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class ReadCsvData {
     public static void main(String[] args) {
@@ -18,6 +18,7 @@ public class ReadCsvData {
         String splitBy = ",";
         int highestSalary = 0;
         HashMap<String, Integer> map = new HashMap<>();
+        HashMap<List,Integer> map1 = new HashMap<>();
         try {
             BufferedReader br = new BufferedReader(new FileReader(fileName));
             String[] data = new String[0];
@@ -34,13 +35,15 @@ public class ReadCsvData {
                 }
 
             }
-            System.out.println(map);
-            int finalHighestSalary = highestSalary;
-            map.forEach((k, v) -> {
-                if (v == finalHighestSalary) {
-                    System.out.println("department" +k + ":" + finalHighestSalary);
-                }
-            });
+                System.out.println(map);
+                System.out.println(map1);
+                int finalHighestSalary = highestSalary;
+                map.forEach((k, v) -> {
+                    if (v == finalHighestSalary) {
+                        System.out.println("department" + k + ":" + finalHighestSalary);
+                    }
+                });
+
         }
         catch(FileNotFoundException ex){
                 throw new RuntimeException(ex);
