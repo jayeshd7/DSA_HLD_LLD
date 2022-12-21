@@ -15,7 +15,7 @@ public class LcmWithK {
             int currLcm = 1;
             for(int j = i; j<n;j++){
                 currLcm = createLcm(currLcm, arr[j]);
-                ans += (currLcm == k) ?1 :0;
+                ans += (currLcm <= k) ? 1 : 0;
             }
         }
         return ans ;
