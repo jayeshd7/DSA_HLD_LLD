@@ -1,4 +1,4 @@
-package LeetCode.StudyPlan;
+package LeetCode.DailyStudyPlan;
 
 import java.util.Arrays;
 

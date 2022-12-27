@@ -1,4 +1,4 @@
-package LeetCode.StudyPlan;
+package LeetCode.DailyStudyPlan;
 
 public class MergeTwoSortedList {
     public static void main(String[] args) {
