@@ -65,6 +65,7 @@ import java.util.HashMap;
 public class LongestSubstringWithoutRepeat {
 
     public static void main(String[] args) {
+
         System.out.println(solveLongestSubstringWithoutRepeat("abcabcbb"));
     }
 
