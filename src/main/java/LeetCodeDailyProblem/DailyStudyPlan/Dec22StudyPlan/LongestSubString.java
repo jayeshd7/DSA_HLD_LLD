@@ -12,7 +12,9 @@ public class LongestSubString {
         String output = "";
         for (int start = 0, end = 0; end < input.length(); end++) {
             char currChar = input.charAt(end);
+
             if (map.containsKey(currChar)) {
+                
                 start = Math.max(map.get(currChar) + 1, start);
             }
             if (output.length() < end - start + 1) {

@@ -1,4 +1,4 @@
-package LeetCodeDailyProblem.DailyStudyPlan.Dec22StudyPlan;
+package LeetCodeDailyProblem.DailyStudyPlan.Jan23StudyPlan.SecondTrack;
 
 public class LongestCommonPrefix {
     public static void main(String[] args) {

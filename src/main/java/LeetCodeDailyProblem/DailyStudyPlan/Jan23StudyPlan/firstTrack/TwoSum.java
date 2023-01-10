@@ -1,4 +1,4 @@
-package LeetCodeDailyProblem.DailyStudyPlan.Jan23StudyPlan;
+package LeetCodeDailyProblem.DailyStudyPlan.Jan23StudyPlan.firstTrack;
 
 import com.google.common.collect.HashBiMap;
 

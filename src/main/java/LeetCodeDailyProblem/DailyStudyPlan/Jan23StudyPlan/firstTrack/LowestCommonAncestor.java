@@ -1,4 +1,4 @@
-package LeetCodeDailyProblem.DailyStudyPlan.Jan23StudyPlan;
+package LeetCodeDailyProblem.DailyStudyPlan.Jan23StudyPlan.firstTrack;
 
 public class LowestCommonAncestor {
     public static void main(String[] args) {
