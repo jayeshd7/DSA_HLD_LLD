@@ -23,7 +23,7 @@ public class Client {
         for (int i = 0; i < 200000; ++i) {
             System.out.println("Something");
             FlyingBullet flyingBullet = new FlyingBullet();
-            flyingBullet.setSpeed(120.);
+            flyingBullet.setSpeed(120.0);
             // .....
             flyingBullet.setBullet(bulletRegistry.getBullet(BulletType.FIVE_MM));
             flyingBullets.add(flyingBullet);
