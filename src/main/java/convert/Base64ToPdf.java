@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Base64;
+import java.util.Date;
 
 public class Base64ToPdf {
 
@@ -29,13 +30,17 @@ public class Base64ToPdf {
     public String readPDF(File file) {
         String substring = null;
         try {
+            long start = System.currentTimeMillis();
             PDDocument document = PDDocument.load(file);
             PDFTextStripper pdfStripper = new PDFTextStripper();
             String text = pdfStripper.getText(document);
-            StringBuffer sb = new StringBuffer();
+            long end = System.currentTimeMillis();
+            System.out.println("Time taken to read PDF file: " + (end - start) + "ms");
+
+           /* StringBuffer sb = new StringBuffer();
             sb.append(text);
             int startingIndex = sb.indexOf("Nama :", 0);
-            substring = sb.substring(startingIndex, startingIndex + 50);
+            substring = sb.substring(startingIndex, startingIndex + 50);*/
         } catch (IOException e) {
             e.printStackTrace();
         }
