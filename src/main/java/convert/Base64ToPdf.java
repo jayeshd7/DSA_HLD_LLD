@@ -37,10 +37,10 @@ public class Base64ToPdf {
             long end = System.currentTimeMillis();
             System.out.println("Time taken to read PDF file: " + (end - start) + "ms");
 
-           /* StringBuffer sb = new StringBuffer();
+            StringBuffer sb = new StringBuffer();
             sb.append(text);
             int startingIndex = sb.indexOf("Nama :", 0);
-            substring = sb.substring(startingIndex, startingIndex + 50);*/
+            substring = sb.substring(startingIndex, startingIndex + 50);
         } catch (IOException e) {
             e.printStackTrace();
         }
