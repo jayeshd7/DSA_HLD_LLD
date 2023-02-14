@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class LongestPalindromeWhichCanMade {
     public static void main(String[] args) {
-        String s = "abccccdd";
+        String s = "abcdecba";
         System.out.println(longestPalindrome(s));
     }
 
