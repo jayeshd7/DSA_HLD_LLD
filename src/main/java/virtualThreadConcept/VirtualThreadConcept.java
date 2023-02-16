@@ -7,7 +7,9 @@ import java.util.concurrent.Future;
 
 public class VirtualThreadConcept {
     public static void main(String[] args) {
-        ExecutorService executor = Executor.newVirtualThreadExecutor();
+
+    }
+       /* ExecutorService executor = Executor.newVirtualThreadExecutor();
 
         executor.submit(() -> {
             System.out.println("Hello from " + Thread.currentThread().getName());
@@ -25,5 +27,5 @@ public class VirtualThreadConcept {
         }
 
 
-    }
+    }*/
 }

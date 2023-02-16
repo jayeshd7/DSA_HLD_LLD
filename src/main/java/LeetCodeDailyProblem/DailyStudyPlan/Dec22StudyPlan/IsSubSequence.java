@@ -2,7 +2,7 @@ package LeetCodeDailyProblem.DailyStudyPlan.Dec22StudyPlan;
 
 public class IsSubSequence {
     public static void main(String[] args) {
-        System.out.println(isSubsequence("abc","ahbgdc"));
+        System.out.println(isSubsequence("abc","ahgdcb"));
     }
 
     private static boolean isSubsequence(String s, String t) {
