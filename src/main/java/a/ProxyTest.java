@@ -8,8 +8,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.events.DomMutationEvent;
-import org.openqa.selenium.devtools.v102.performance.Performance;
-import org.openqa.selenium.devtools.v102.performance.model.Metric;
+import org.openqa.selenium.devtools.v110.performance.Performance;
+import org.openqa.selenium.devtools.v110.performance.model.Metric;
 import org.openqa.selenium.devtools.v85.log.Log;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.PointerInput;
@@ -95,6 +95,7 @@ public class ProxyTest {
 
     public static void performanceMetricsExample() {
         ChromeOptions chromeOptions = new ChromeOptions();
+        //chromeOptions.addArguments("--remote-allow-origins=*");
         WebDriverManager.chromedriver().setup();
         ChromeDriver driver = new ChromeDriver(chromeOptions);
         DevTools devTools = driver.getDevTools();
