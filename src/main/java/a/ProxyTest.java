@@ -104,6 +104,8 @@ public class ProxyTest {
         List<Metric> metricList = devTools.send(Performance.getMetrics());
 
         driver.get("https://google.com");
+
+        driver.findElement(By.xpath("//input[@id='lst-ib']//following::input[@id='']")).sendKeys("selenium");
         driver.quit();
 
         for(Metric m : metricList) {
@@ -151,6 +153,7 @@ public class ProxyTest {
 
         driver.findElement(By.id("alert")).click();
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        wait.until(ExpectedConditions.attributeContains(By.id("alert"), "class", "alert-success"));
         String text = alert.getText();
         alert.accept();
 

@@ -32,6 +32,15 @@ public class RestAssuredRequest {
 
         Assertions.assertEquals("qui est esse", Actual);
     }
+
+    @Test
+    public void getRequest2() {
+        Response response = RestAssured.given().auth().form("username", "password")
+                .when().get("/posts/2")
+                .then().statusCode(200).extract().response();
+
+        System.out.println(response.getBody().prettyPrint());
+    }
     @Test
     public void postRequest() {
         Response response = RestAssured.given()
