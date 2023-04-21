@@ -8,6 +8,7 @@ public class ReverseString {
 
     private static String reverseStringSol(String s) {
         char[] chars = s.toCharArray();
+
         int left = 0;
         int right = chars.length - 1;
         while (left < right) {
