@@ -6,6 +6,10 @@ import AugustBatchProblem.LLD.Factory.tax.SalaryDetails;
 public class OldTaxAlgorithm implements TaxAlgorithm {
     @Override
     public Double calculateTax(SalaryDetails details) {
-        return null;
+        double basePay = details.getBasePay();
+        double hra = details.getHra();
+        double lta = details.getLta();
+        return (basePay + hra + lta) * 0.1;
+
     }
 }
