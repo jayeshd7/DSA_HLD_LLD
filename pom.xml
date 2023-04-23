@@ -17,6 +17,7 @@
 
         <!-- https://mvnrepository.com/artifact/junit/junit -->
 
+
         <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 
 
@@ -44,7 +45,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.7.0</version>
+            <version>5.9.2</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
@@ -90,6 +91,26 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.3.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.github.tomakehurst/wiremock -->
+        <dependency>
+            <groupId>com.github.tomakehurst</groupId>
+            <artifactId>wiremock</artifactId>
+            <version>2.27.2</version>
+
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/ru.lanwen.wiremock/wiremock-junit5 -->
+        <dependency>
+            <groupId>ru.lanwen.wiremock</groupId>
+            <artifactId>wiremock-junit5</artifactId>
+            <version>1.0.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
         </dependency>
 
 
