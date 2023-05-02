@@ -18,6 +18,6 @@ class Main {
         b.show();  //("Dervied")
 
 
-        System.out.println(b.a);
+        System.out.println(b.a); //10
     }
 }

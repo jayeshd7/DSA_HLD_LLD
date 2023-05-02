@@ -21,8 +21,22 @@ public class SearchAmazon {
         String url = "https://www.amazon.in/";
         String search = "samsung mobile phone";
 
-        amazonVisit(url, search);
+        //amazonVisit(url, search);
+        
+        yatraVisit("https://www.yatra.com/");
     }
+
+    private static void yatraVisit(String url) {
+
+        WebDriver driver = new ChromeDriver();
+        driver.get(url);
+        driver.manage().window().maximize();
+        List<WebElement> elements = driver.findElements(By.xpath("(//ul[@class='be-tabs-snipe clearfix'])/li/a[@title]"));
+        for (WebElement element : elements) {
+            System.out.println(element.getText());
+        }
+    }
+
     public void devToolConcept() {
         WebDriver driver = new ChromeDriver();
         DevTools devTools = ((ChromeDriver) driver).getDevTools();
