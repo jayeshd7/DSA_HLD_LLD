@@ -14,13 +14,13 @@ public class RestAssuredAPIAutomation {
     @Test
 
     public void getRequest(){
-        RequestSpecification request = RestAssured.given().auth().basic("test", "test");
+        RequestSpecification request = RestAssured.given().auth().preemptive().basic("test", "test");
         request.header("Content-Type", "application/json");
         JsonObject requestParams = new JsonObject();
         requestParams.addProperty("userName", "test");
         requestParams.addProperty("password", "test");
         request.body(requestParams.toString());
-        Response response = request.post(url);
+        Response response = request.get(url);
         System.out.println(response.getBody().prettyPrint());
 
 
