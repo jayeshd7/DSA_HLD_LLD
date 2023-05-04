@@ -51,7 +51,7 @@ public class RestAssuredRequest {
                 .post("/posts")
                 .then()
                 .extract().response();
-
+        System.out.println(response.getBody().prettyPrint());
         Assertions.assertEquals(201, response.statusCode());
         Assertions.assertEquals("foo", response.jsonPath().getString("title"));
         Assertions.assertEquals("bar", response.jsonPath().getString("body"));
