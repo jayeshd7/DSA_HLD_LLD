@@ -1,5 +1,6 @@
 package RestAssuredPractice;
 
+import com.google.gson.JsonObject;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
@@ -8,11 +9,39 @@ import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static io.restassured.RestAssured.given;
-
 public class PostApi {
 
     String baseUrl = "https://demoqa.com";
+
+    String reqresUrl = "https://reqres.in";
+
+
+
+    @Test(description = "test reqres post api using json object")
+    public void postReqresApi(){
+
+        RequestSpecification request = RestAssured.given();
+        /*JsonObject body = new JsonObject();
+        body.addProperty("name", "morpheus");
+        body.addProperty("job", "leader");
+        request.header("Content-Type", "application/json");*/
+
+        ReqresBody reqresBody = new ReqresBody();
+        reqresBody.setName("morpheus");
+        reqresBody.setJob("leader");
+        request.header("Content-Type", "application/json");
+        request.body(reqresBody);
+
+        Response response = request.post(reqresUrl + "/api/users");
+        System.out.println(response.getBody().prettyPrint());
+        ResponseBody resBody = response.getBody();
+        ReqresPostResponse reqResponse = resBody.as(ReqresPostResponse.class);
+
+        System.out.println(reqResponse.getName());
+        Assert.assertEquals(reqResponse.getName(), "morpheus");
+
+
+    }
 
     @Test(description = "This is a test method")
     public void testPostResponse(){
@@ -23,6 +52,7 @@ public class PostApi {
         JSONObject requestParams = new JSONObject();
         requestParams.put("UserName", "test_rest");
         requestParams.put("Password", "rest@123");
+        request.header("Content-Type", "application/json");
         request.body(requestParams.toJSONString());
         Response response = request.when().post(baseUrl+"/Account/v1/User");
         System.out.println(response.getStatusCode());

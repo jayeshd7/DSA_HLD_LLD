@@ -7,8 +7,7 @@ import lombok.*;
 import java.util.List;
 
 
-@Getter @Setter @AllArgsConstructor @NoArgsConstructor @ToString
-@Builder
+@Getter @Setter @AllArgsConstructor @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchPOJO {
 
