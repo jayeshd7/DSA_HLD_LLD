@@ -26,8 +26,8 @@ public class GETAPI {
 
     @Test(description = "GET JIRA API")
     public void getJIRApi() {
-        String un = "jayesh.dalal@gojek.com";
-        String pwd = "ATATT3xFfGF0CIPpHVIgZmSQAZmP3rI6ZmIju3HIplB239WPULqlB2fXPkbC5Xkqzh4QgW36VvT9HsQd91M6FOaJ8nXCMqaZppLOyJ5H6zKF3BAVadSGZWpg1OPVmPSCvS3Jb_heKwsRvNR7hXYwTLc5pg9UwuWIeGJf4NMhEDWqwyUQfXrjwT8=C28B498B";
+        String un = "jayesh.dalal@gmail.com";
+        String pwd = "Jayesh@123";
 
         RequestSpecification request = RestAssured.given();
         request.auth().preemptive().basic(un,pwd);
