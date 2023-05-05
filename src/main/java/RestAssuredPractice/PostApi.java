@@ -15,10 +15,14 @@ public class PostApi {
 
     String reqresUrl = "https://reqres.in";
 
+    GETAPI getApi = new GETAPI();
+
+
 
 
     @Test(description = "test reqres post api using json object")
     public void postReqresApi(){
+
 
         RequestSpecification request = RestAssured.given();
         /*JsonObject body = new JsonObject();

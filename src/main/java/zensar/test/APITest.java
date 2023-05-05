@@ -42,34 +42,6 @@ public class APITest {
                 }
             });
         });
-
-
-
-        // TODO: Get the value of state province
-        /*SearchPOJO response = request.get(url).as(SearchPOJO.class);
-
-        if(response.getName().equals("Witwatersrand")){
-            System.out.println(response.getStateProvince());
-        }*/
-
-
-
-
-
-
-    }
-
-    /*@Test
-    public void getRequest() throws IOException {
-        OkHttpClient client = new OkHttpClient().newBuilder()
-                .build();
-
-        Request request = new Request.Builder()
-                .url("http://universities.hipolabs.com/search?country=South+Africa")
-                .get()
-                .build();
-        Response response = client.newCall(request).execute();
-        System.out.println(response.body().string().contains("Witwatersrand"));
-    }*/
+   }
 
 }
