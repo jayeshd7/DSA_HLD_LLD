@@ -2,9 +2,12 @@ package RestAssuredPractice;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
+import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -45,6 +48,23 @@ public class PostApiWithGson {
         ReqresPostResponse reqresPostResponse = response.getBody().as(ReqresPostResponse.class);
         Assert.assertEquals(reqresPostResponse.getName(), "jysh");
 
+
+    }
+
+    @Test(description = "check reqres api with gson")
+    public void checkLoginSuccessfull(){
+        RequestSpecification request = RestAssured.given();
+        request.header("Content-Type", "application/json");
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("email", "eve.holt@reqres.in");
+        jsonObject.put("password", "cityslicka");
+        request.body(jsonObject.toJSONString());
+        Response response = request.post(baseUrl + "/api/login");
+        Assert.assertEquals(response.getStatusCode(), 200);
+        ResponseBody LoginResponse = response.getBody();
+        ReqresLoginResponse reqresLoginResponse = LoginResponse.as(ReqresLoginResponse.class);
+        System.out.println(reqresLoginResponse.getToken());
+        Assert.assertNotNull(reqresLoginResponse.getToken());
 
     }
 }

@@ -30,7 +30,11 @@ public class GETAPI {
         String pwd = "Jayesh@123";
 
         RequestSpecification request = RestAssured.given();
+
         request.auth().preemptive().basic(un,pwd);
+
+        //request.auth().digest(un, pwd);
+
         request.header("Content-Type", "application/json");
         Response response = request.get(jiraUrl + "/rest/servicedeskapi/request");
         System.out.println(response.getStatusCode());
