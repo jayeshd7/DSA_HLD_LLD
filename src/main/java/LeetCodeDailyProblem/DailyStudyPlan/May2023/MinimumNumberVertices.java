@@ -9,7 +9,7 @@ public class MinimumNumberVertices {
         int n = 6;
         System.out.println(findSmallestSetOfVertices(n, edges));
     }
-
+    // find smallest
     private static ArrayList<Integer> findSmallestSetOfVertices(int n, int[][] edges) {
 
         ArrayList<Integer> result = new ArrayList<>();
