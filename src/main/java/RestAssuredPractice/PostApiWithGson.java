@@ -24,7 +24,7 @@ public class PostApiWithGson {
 
     public ReqresBody getDataFromJson(){
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("/Users/jayeshdalal/PersonalGitHubCode/GFG/src/main/java/RestAssuredPractice/testData.json"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("C:\\Personal_Code\\DSA_HLD_LLD\\src\\main\\java\\RestAssuredPractice\\testData.json"));
             ReqresBody reqresBody = gson.fromJson(bufferedReader, ReqresBody.class);
             return reqresBody;
         }
@@ -46,7 +46,7 @@ public class PostApiWithGson {
         Assert.assertEquals(response.getStatusCode(), 201);
 
         ReqresPostResponse reqresPostResponse = response.getBody().as(ReqresPostResponse.class);
-        Assert.assertEquals(reqresPostResponse.getName(), "jysh");
+        Assert.assertEquals(reqresPostResponse.getName(), "jayesh");
 
 
     }
