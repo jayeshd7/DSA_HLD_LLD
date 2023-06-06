@@ -18,10 +18,10 @@ public class HashMapValueSort {
 
         map.entrySet().stream().sorted((k1, k2) -> -k1.getValue().compareTo(k2.getValue())).forEach(System.out::println);
 
+        Map.Entry<Integer, Integer> entry = map.entrySet().stream().sorted((k1, k2) -> -k1.getValue().compareTo(k2.getValue())).findFirst().get();
+        System.out.println(entry.getKey());
 
-        RestAssured.baseURI = "www.google.com";
 
-        RestAssured.given().sessionId("123").when().get().then().log().all();
 
         // CI variable -
 
