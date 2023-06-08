@@ -28,6 +28,10 @@ public class SearchAmazon {
 
     private static void yatraVisit(String url) {
 
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        options.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.DISMISS);
+
         WebDriver driver = new ChromeDriver();
         driver.get(url);
         driver.manage().window().maximize();
@@ -35,6 +39,7 @@ public class SearchAmazon {
         for (WebElement element : elements) {
             System.out.println(element.getText());
         }
+        driver.close();
     }
 
     public void devToolConcept() {
