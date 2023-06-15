@@ -33,10 +33,12 @@ public class MaxiumLevelSum {
             int sum = 0;
             for(int i = 0; i < size; i++){
                 TreeNode node = queue.poll();
-                sum += node.val;
-
+                if(node != null) {
+                    sum += node.val;
+                }
                 if(node.left != null) queue.offer(node.left);
                 if(node.right != null) queue.offer(node.right);
+
             }
 
             if(sum > maxSum){
