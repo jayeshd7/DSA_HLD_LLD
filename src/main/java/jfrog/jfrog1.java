@@ -28,7 +28,21 @@ import java.util.HashMap;
 
 public class jfrog1 {
     public static void main(String[] args) {
+
         System.out.println(findFirstUnique("asdaqdsqd"));
+        System.out.println(findFirstUnique1("asdaqdsfqod"));
+    }
+
+    private static String findFirstUnique1(String s) {
+        StringBuilder sb = new StringBuilder(s);
+        for(int i =0; i<s.length();i++){
+            char c = s.charAt(i);
+            if(sb.indexOf(String.valueOf(c)) == sb.lastIndexOf(String.valueOf(c))){
+                return String.valueOf(c);
+            }
+        }
+        return "";
+
     }
 
     private static String findFirstUnique(String A) {
@@ -53,6 +67,8 @@ public class jfrog1 {
         }
         return "";
     }
+
+
 
 
 }
