@@ -35,7 +35,7 @@ public class MinimumCostToMakeArrayEqual {
     public static long helper(int[] nums, int[] cost, int all) {
         long totalCost = 0L;
         for (int i = 0; i < nums.length; i++) {
-            totalCost += 1L * Math.abs(nums[i] - all) * cost[i];
+            totalCost += (long) Math.abs(nums[i] - all) * cost[i];
         }
         return totalCost;
     }
