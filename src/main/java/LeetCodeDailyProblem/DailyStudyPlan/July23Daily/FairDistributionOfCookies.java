@@ -2,7 +2,7 @@ package LeetCodeDailyProblem.DailyStudyPlan.July23Daily;
 
 public class FairDistributionOfCookies {
     static int ans ;
-    static int count [];
+    static int[] count;
 
     public static void main(String[] args) {
         int [] cookies = {8,15,10,20,8};
@@ -11,7 +11,6 @@ public class FairDistributionOfCookies {
     }
 
     private static int fairDistributionOfCookies(int[] cookies, int k) {
-        int n = cookies.length;
         ans = Integer.MAX_VALUE;
         count = new int[k];
         backtrackFairDistribution(0,cookies,k);
