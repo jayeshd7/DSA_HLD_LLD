@@ -4,8 +4,8 @@ package AugustBatchProblem.LLD.Iterator;
 import java.util.List;
 
 public class MyIteratorImpl implements MyIterator{
-    private List<User> list;
-    private int length;
+    private final List<User> list;
+    private final int length;
 
     private int position=0;
     public MyIteratorImpl(List<User> list){
@@ -15,8 +15,7 @@ public class MyIteratorImpl implements MyIterator{
 
     @Override
     public boolean hasNext() {
-       if(position>=length) return false;
-       else return true;
+        return position < length;
     }
 
     @Override
