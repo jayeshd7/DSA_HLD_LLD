@@ -20,9 +20,7 @@ public class SortCharactersByFrequency {
         }
         StringBuilder sb = new StringBuilder();
         map.entrySet().stream().sorted((a, b) -> b.getValue() - a.getValue()).forEach(entry -> {
-            for (int i = 0; i < entry.getValue(); i++) {
-                sb.append(entry.getKey());
-            }
+            sb.append(String.valueOf(entry.getKey()).repeat(Math.max(0, entry.getValue())));
         });
         return sb.toString();
     }
