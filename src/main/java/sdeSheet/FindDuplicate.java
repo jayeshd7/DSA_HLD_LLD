@@ -1,5 +1,7 @@
 package sdeSheet;
 
+import java.util.HashMap;
+
 public class FindDuplicate {
 
     public static void main(String[] args) {
@@ -11,12 +13,25 @@ public class FindDuplicate {
     private static int findDuplicate(int[] arr) {
 
         int n = arr.length;
-        int[] freq = new int[n + 1];
 
+        // space complexity: O(n)
+//        int[] freq = new int[n + 1];
+//
+//        for (int i = 0; i < n; i++) {
+//            if (freq[arr[i]] == 0) {
+//                freq[arr[i]] +=1;
+//            } else {
+//                return arr[i];
+//            }
+//        }
+//        return 0;
+
+        HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < n; i++) {
-            if (freq[arr[i]] == 0) {
-                freq[arr[i]] +=1;
-            } else {
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+        }
+        for (int i = 0; i < n; i++) {
+            if (map.get(arr[i]) > 1) {
                 return arr[i];
             }
         }
